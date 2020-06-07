@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:travelapp/dashboard_page.dart';
+
+
+import 'dashboard.dart';
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   var selectedItem = 0;
 
   List children = [
     DashboardPage(),
     DashboardPage(),
     DashboardPage(),
-    DashboardPage(),
+    DashboardPage()
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
         currentIndex: selectedItem,
         unselectedLabelStyle: TextStyle(color: Color(0xFF1B1B1B)),
         unselectedItemColor: Color(0xFF888888),
-        onTap: (currIndex){
+        onTap: (currIndex) {
           setState(() {
             selectedItem = currIndex;
           });
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
               width: 5.0,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFFFD4F99)
+                color: Color(0xFFFD4F99) 
               ),
             )
           ),
@@ -55,7 +56,7 @@ class _HomePageState extends State<HomePage> {
               width: 5.0,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFFFD4F99)
+                color: Color(0xFFFD4F99) 
               ),
             )
           ),
@@ -67,23 +68,22 @@ class _HomePageState extends State<HomePage> {
               width: 5.0,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFFFD4F99)
+                color: Color(0xFFFD4F99) 
               ),
             )
           ),
           BottomNavigationBarItem(
             backgroundColor: Color(0xFF1B1B1B),
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.person_outline),
             title: Container(
               height: 5.0,
               width: 5.0,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color(0xFFFD4F99)
+                color: Color(0xFFFD4F99) 
               ),
             )
-          ),
-
+          )
         ],
       ),
     );
